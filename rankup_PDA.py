@@ -14,9 +14,9 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 ## 6.5 에서 의존성 문제 괸련 추가 코드
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# __import__('pysqlite3')
+# import sys
+# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 
 #오픈AI API 키 설정
