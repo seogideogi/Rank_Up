@@ -1,5 +1,5 @@
 # 개인 채무 조정 Q&A 챗봇 ( 팀 Rank_Up )
-##### 0. 팀 구성원
+###### 0. 팀 구성원
 이은정(팀장) / 노승호 / 여혜미 / 이영준
 
 ###### 1. 기본 정보 공유
@@ -17,3 +17,5 @@ https://rankup-x7mg748kbfbjghcddawzmv.streamlit.app/
 ###### 5. 프로젝트 최종 문서
 https://www.canva.com/design/DAGbw8RADSw/IDf7YulFPDq7j6Pi2Y_51Q/edit
 
+###### 6. 참고 코드 출처
+RAG 시스템 구축을 위한 랭체인 실전 가이드
