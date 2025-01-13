@@ -17,7 +17,7 @@ https://rankup-x7mg748kbfbjghcddawzmv.streamlit.app/
 ###### 5. 프로젝트 최종 문서
 https://www.canva.com/design/DAGbw8RADSw/IDf7YulFPDq7j6Pi2Y_51Q/edit
 
-###### 6. 참고 코드 출처
+###### 6. 참고문서 및 코드 출처
 
 RAG 시스템 구축을 위한 랭체인 실전 가이드
 
