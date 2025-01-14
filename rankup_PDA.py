@@ -129,17 +129,26 @@ for msg in chat_history.messages:
 
 
 # st.chat_input 인풋박스
-if prompt_message := st.chat_input("Your question"):  
+if prompt_message := st.chat_input("Your question"):
     st.chat_message("human").write(prompt_message)
     with st.chat_message("ai"):
         with st.spinner("Thinking..."):
             config = {"configurable": {"session_id": "any"}}
             response = conversational_rag_chain.invoke(
                 {"input": prompt_message},
-                config) # AI의 응답을 받고
-            
-            answer = response['answer']
-            st.write(answer)
+                config
+            )  # 응답을 스트리밍 방식으로 수신
+
+            # 응답을 청크 단위로 처리
+            if hasattr(response, '__iter__'):  # 응답이 반복 가능한 경우 (스트림)
+                for chunk in response:
+                    if hasattr(chunk, 'data'):  # 각 청크에 data 속성이 있는지 확인
+                        answer_chunk = chunk.data  # 청크의 데이터 추출
+                        st.write(answer_chunk)  # Streamlit에 출력
+                st.write("✔️ 답변이 완료되었습니다.")  # 모든 청크 처리 후 완료 메시지
+            else:
+                st.write("응답 형식이 올바르지 않습니다.")  # 예상하지 못한 응답 처리
+				
             with st.expander("참고 문서 확인"):
                 for doc in response['context']:
                     st.markdown(doc.metadata['source'], help=doc.page_content)
