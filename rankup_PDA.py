@@ -99,6 +99,7 @@ def initialize_components(selected_model):
     history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
     question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
     rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
+		
 	
     return rag_chain
 
@@ -139,16 +140,15 @@ if prompt_message := st.chat_input("Your question"):
                 config
             )  # 응답을 스트리밍 방식으로 수신
 
-            # 응답을 청크 단위로 처리
-            if hasattr(response, '__iter__'):  # 응답이 반복 가능한 경우 (스트림)
-                for chunk in response:
-                    if hasattr(chunk, 'data'):  # 각 청크에 data 속성이 있는지 확인
-                        answer_chunk = chunk.data  # 청크의 데이터 추출
-                        st.write(answer_chunk)  # Streamlit에 출력
-                st.write("✔️ 답변이 완료되었습니다.")  # 모든 청크 처리 후 완료 메시지
-            else:
-                st.write("응답 형식이 올바르지 않습니다.")  # 예상하지 못한 응답 처리
-				
-            with st.expander("참고 문서 확인"):
-                for doc in response['context']:
-                    st.markdown(doc.metadata['source'], help=doc.page_content)
+            answer_placeholder = st.empty()
+            full_response = ""
+            
+            for chunk in response_stream['answer']:
+                if isinstance(chunk, str):
+                    full_response += chunk
+                    answer_placeholder.markdown(full_response + "▌")
+            
+            answer_placeholder.markdown(full_response)
+
+    st.session_state.messages.append({"role": "human", "content": prompt_message})
+    st.session_state.messages.append({"role": "assistant", "content": full_response})
