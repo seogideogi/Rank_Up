@@ -140,9 +140,9 @@ if prompt_message := st.chat_input("Your question"):
                 config
             )  # 응답을 스트리밍 방식으로 수신
 
-            answer_placeholder = st.empty()
-            full_response = ""
-            
+			answer_placeholder = st.empty()
+			full_response = ""
+
 			for chunk in response_stream['answer']:
 				if hasattr(chunk, 'content'):
 					content = chunk.content
