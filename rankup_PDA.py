@@ -4,7 +4,8 @@ import streamlit as st
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain.vectorstores import Chroma
+import chromadb
+#from langchain.vectorstores import Chroma
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
@@ -14,9 +15,9 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 ## 6.5 에서 의존성 문제 괸련 추가 코드
-# __import__('pysqlite3')
-# import sys
-# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+ __import__('pysqlite3')
+ import sys
+ sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 
 #오픈AI API 키 설정
