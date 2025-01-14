@@ -6,7 +6,7 @@ langchain-text-splitters
 langchain-chroma
 langchain-ollama
 langchain-experimental
-pysqlite3-binary
+#pysqlite3-binary
 
 anthropic
 openai
