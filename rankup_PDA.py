@@ -143,12 +143,20 @@ if prompt_message := st.chat_input("Your question"):
             answer_placeholder = st.empty()
             full_response = ""
             
-            for chunk in response_stream['answer']:
-                if isinstance(chunk, str):
-                    full_response += chunk
-                    answer_placeholder.markdown(full_response + "▌")
-            
-            answer_placeholder.markdown(full_response)
+			for chunk in response_stream['answer']:
+				if hasattr(chunk, 'content'):
+					content = chunk.content
+				elif isinstance(chunk, dict) and 'content' in chunk:
+					content = chunk['content']
+				elif isinstance(chunk, str):
+					content = chunk
+				else:
+					continue
+				
+				full_response += content
+				answer_placeholder.markdown(full_response + "▌")
+
+			answer_placeholder.markdown(full_response)
 
     st.session_state.messages.append({"role": "human", "content": prompt_message})
     st.session_state.messages.append({"role": "assistant", "content": full_response})
