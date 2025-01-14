@@ -97,7 +97,7 @@ def initialize_components(selected_model):
     )
 
 	# 앞서 선언한 요소들을 하나의 체인에 묶기 위해 아래와 같은 과정 진행
-    llm = ChatOpenAI(model=selected_model)
+    llm = ChatOpenAI(model=selected_model , temperature=0)
     history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
     question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
     rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
