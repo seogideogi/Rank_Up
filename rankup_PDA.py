@@ -4,8 +4,7 @@ import streamlit as st
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-import chromadb
-#from langchain.vectorstores import Chroma
+from langchain.vectorstores import Chroma
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
@@ -15,9 +14,9 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 ## 6.5 에서 의존성 문제 괸련 추가 코드
-#__import__('pysqlite3')
-#import sys
-#sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# __import__('pysqlite3')
+# import sys
+# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 
 #오픈AI API 키 설정
@@ -100,7 +99,6 @@ def initialize_components(selected_model):
     history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
     question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
     rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
-		
 	
     return rag_chain
 
@@ -131,25 +129,17 @@ for msg in chat_history.messages:
 
 
 # st.chat_input 인풋박스
-if prompt_message := st.chat_input("Your question"):
+if prompt_message := st.chat_input("Your question"):  
     st.chat_message("human").write(prompt_message)
     with st.chat_message("ai"):
         with st.spinner("Thinking..."):
             config = {"configurable": {"session_id": "any"}}
             response = conversational_rag_chain.invoke(
                 {"input": prompt_message},
-                config
-            )  # 응답을 스트리밍 방식으로 수신
-
-            answer_placeholder = st.empty()
-            full_response = ""
+                config) # AI의 응답을 받고
             
-            for chunk in response_stream['answer']:
-                if isinstance(chunk, str):
-                    full_response += chunk
-                    answer_placeholder.markdown(full_response + "▌")
-            
-            answer_placeholder.markdown(full_response)
-
-    st.session_state.messages.append({"role": "human", "content": prompt_message})
-    st.session_state.messages.append({"role": "assistant", "content": full_response})
+            answer = response['answer']
+            st.write(answer)
+            with st.expander("참고 문서 확인"):
+                for doc in response['context']:
+                    st.markdown(doc.metadata['source'], help=doc.page_content)

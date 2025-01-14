@@ -26,4 +26,3 @@ faiss-cpu
 grandalf 
 streamlit
 
-langchain-openai
