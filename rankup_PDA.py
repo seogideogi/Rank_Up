@@ -95,7 +95,7 @@ def initialize_components(selected_model):
     )
 
 	# 앞서 선언한 요소들을 하나의 체인에 묶기 위해 아래와 같은 과정 진행
-    llm = ChatOpenAI(model=selected_model)
+    llm = ChatOpenAI(model=selected_model, stream=True)
     history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
     question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
     rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
@@ -105,7 +105,6 @@ def initialize_components(selected_model):
 # Streamlit UI
 
 st.header("개인 채무 조정 Q&A 챗봇 💬")
-#st.subheader("1. 채무 및 연체정보")\
 st.info("1. 채무 및 연체정보 \n 2. 자산 \n 3. 소득 \n\n 위 3가지 정보를 입력하시면, 상세한 답변을 얻으 실수 있습니다.")
 option = st.selectbox("Select GPT Model", ("gpt-4o-mini", "gpt-3.5-turbo-0125"))
 rag_chain = initialize_components(option)
