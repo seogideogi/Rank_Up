@@ -106,7 +106,8 @@ def initialize_components(selected_model):
 
 # Streamlit UI
 
-st.header("개인 채무 조정 Q&A 챗봇 💬 📚")
+st.header("개인 채무 조정 Q&A 챗봇 💬")
+st.info("1. 채무 및 연체정보 \n 2. 자산 \n 3. 소득 \n\n 위 3가지 정보를 입력하시면, 상세한 답변을 얻으 실수 있습니다.")
 option = st.selectbox("Select GPT Model", ("gpt-4o-mini", "gpt-3.5-turbo-0125"))
 rag_chain = initialize_components(option)
 chat_history = StreamlitChatMessageHistory(key="chat_messages") # 스트림릿 상에서 사용자와 AI가 주고받은 대화가 Chat_messages라는 key값의 value로 저장 됨
