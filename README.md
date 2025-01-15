@@ -1,6 +1,6 @@
 # 개인 채무 조정 Q&A 챗봇 ( 팀 Rank_Up )
 ### 1. 팀 구성원
-이은정(팀장) / 노승호 / 여혜미 / 이영준
+* 이은정(팀장) / 노승호 / 여혜미 / 이영준
 
 ### 2. 요구사항 정의
 * 법에 대한 지식이 부족한 일반 금융 소비자들이 자신의 채무 상황을  쉽게 이해 하도록 하고 , 채무 조정 관련하여 적절한 신청 시기를 알지 못해서 시기를 놓치는 경우가 없도록  할것.
@@ -18,10 +18,10 @@
 ![image](https://github.com/user-attachments/assets/3161eb3d-b9fb-4313-b0be-169d47ddcf52)
 
 ### 4. 웹앱
-https://rankup-x7mg748kbfbjghcddawzmv.streamlit.app/
+* https://rankup-x7mg748kbfbjghcddawzmv.streamlit.app/
 
 ### 5. 프로젝트 최종 문서
-https://github.com/dldudwnsdlek/Rank_Up/blob/main/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43%EA%B8%B0_%EB%9E%AD%EC%B2%B4%EC%9D%B8%ED%86%A4_%EC%A1%B0_%EB%9E%AD%ED%81%AC%EC%97%85%20(2).pdf
+* https://github.com/dldudwnsdlek/Rank_Up/blob/main/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43%EA%B8%B0_%EB%9E%AD%EC%B2%B4%EC%9D%B8%ED%86%A4_%EC%A1%B0_%EB%9E%AD%ED%81%AC%EC%97%85%20(2).pdf
 
 ### 6. 시연영상
 * https://www.youtube.com/watch?v=dYq_rG0BBi8  ( short )
