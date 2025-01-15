@@ -16,6 +16,13 @@
 ![image](https://github.com/user-attachments/assets/4d7e1182-5841-4330-8c6b-7c5d2bbe8628)
 ##### 3.2 서비스 아키텍처
 ![image](https://github.com/user-attachments/assets/3161eb3d-b9fb-4313-b0be-169d47ddcf52)
+##### 3.3 스토리보드
+![image](https://github.com/user-attachments/assets/dfbdf7a3-c2d9-42c2-8579-4e6d3e9444f5)
+![image](https://github.com/user-attachments/assets/52fe9c4e-9843-40c1-afd4-1c94db0ef627)
+![image](https://github.com/user-attachments/assets/37cafa92-1df0-4f4d-bad3-144f72534db1)
+![image](https://github.com/user-attachments/assets/43b652a7-857d-4a50-8838-847facf3b1ea)
+
+
 
 ### 4. 웹앱
 * https://rankup-x7mg748kbfbjghcddawzmv.streamlit.app/
