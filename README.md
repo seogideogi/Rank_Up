@@ -14,8 +14,8 @@
 ### 3. 분석설계
 ##### 3.1 UML - 시퀀스 다이어그램
 ![image](https://github.com/user-attachments/assets/4d7e1182-5841-4330-8c6b-7c5d2bbe8628)
-
-
+##### 3.2 서비스 아키텍처
+![image](https://github.com/user-attachments/assets/3161eb3d-b9fb-4313-b0be-169d47ddcf52)
 
 ### 4. 웹앱
 https://rankup-x7mg748kbfbjghcddawzmv.streamlit.app/
