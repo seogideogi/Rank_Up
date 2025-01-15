@@ -24,8 +24,8 @@ https://rankup-x7mg748kbfbjghcddawzmv.streamlit.app/
 https://github.com/dldudwnsdlek/Rank_Up/blob/main/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43%EA%B8%B0_%EB%9E%AD%EC%B2%B4%EC%9D%B8%ED%86%A4_%EC%A1%B0_%EB%9E%AD%ED%81%AC%EC%97%85%20(2).pdf
 
 ### 6. 시연영상
-https://www.youtube.com/watch?v=dYq_rG0BBi8  ( short )
-https://www.youtube.com/watch?v=O6lcT6s5kDc  ( long  )
+* https://www.youtube.com/watch?v=dYq_rG0BBi8  ( short )
+* https://www.youtube.com/watch?v=O6lcT6s5kDc  ( long  )
 
 ### 7. 참고자료 및 코드 출처
 
