@@ -29,6 +29,5 @@
 
 ### 7. 참고자료 및 코드 출처
 
-RAG 시스템 구축을 위한 랭체인 실전 가이드
-
-https://www.ccrs.or.kr/debt/relief/debtrelief/info.do
+* RAG 시스템 구축을 위한 랭체인 실전 가이드
+* https://www.ccrs.or.kr/debt/relief/debtrelief/info.do
