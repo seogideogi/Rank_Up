@@ -9,6 +9,7 @@ langchain-experimental
 
 anthropic
 openai
+pysqlite3
 
 nltk==3.8.1
 pypdfium2
