@@ -14,15 +14,13 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 ## 6.5 에서 의존성 문제 괸련 추가 코드
-# __import__('pysqlite3')
-# import sys
-# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 
 #오픈AI API 키 설정
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
-
-# os.environ["OPENAI_API_KEY"] = "OPENAI_API_KEY"
 
 #cache_resource로 한번 실행한 결과 캐싱해두기
 @st.cache_resource
@@ -61,7 +59,7 @@ def get_vectorstore(_docs):
 
 @st.cache_resource
 def initialize_components(selected_model):
-    # file_path = r"C:\Users\user\랭체인톤\개인채무조정.pdf"
+    #file_path = r"C:\Users\lee.eunjeong\Downloads\대한민국헌법(헌법)(제00010호)(19880225).pdf"
     file_path = r"./개인채무조정.pdf"
     pages = load_and_split_pdf(file_path)
     vectorstore = get_vectorstore(pages)
@@ -97,7 +95,7 @@ def initialize_components(selected_model):
     )
 
 	# 앞서 선언한 요소들을 하나의 체인에 묶기 위해 아래와 같은 과정 진행
-    llm = ChatOpenAI(model=selected_model , temperature=0)
+    llm = ChatOpenAI(model=selected_model)
     history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
     question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
     rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
@@ -106,8 +104,7 @@ def initialize_components(selected_model):
 
 # Streamlit UI
 
-st.header("개인 채무 조정 Q&A 챗봇 💬")
-st.info("1. 채무 및 연체정보 \n 2. 자산 \n 3. 소득 \n\n 위 3가지 정보를 입력하시면, 상세한 답변을 얻으 실수 있습니다.")
+st.header("개인 채무 조정 Q&A 챗봇 💬 📚")
 option = st.selectbox("Select GPT Model", ("gpt-4o-mini", "gpt-3.5-turbo-0125"))
 rag_chain = initialize_components(option)
 chat_history = StreamlitChatMessageHistory(key="chat_messages") # 스트림릿 상에서 사용자와 AI가 주고받은 대화가 Chat_messages라는 key값의 value로 저장 됨
