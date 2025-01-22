@@ -25,7 +25,7 @@
 
 
 ### 4. 웹앱
-* https://rankup-x7mg748kbfbjghcddawzmv.streamlit.app/
+* https://rankupseogideogi.streamlit.app
 
 ### 5. 프로젝트 최종 문서
 * https://github.com/dldudwnsdlek/Rank_Up/blob/main/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A43%EA%B8%B0_%EB%9E%AD%EC%B2%B4%EC%9D%B8%ED%86%A4_%EC%A1%B0_%EB%9E%AD%ED%81%AC%EC%97%85%20(2).pdf
